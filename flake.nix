@@ -23,8 +23,6 @@
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
               home-manager.users.loic = import ./home.nix;
               home-manager.extraSpecialArgs = specialArgs;
             }

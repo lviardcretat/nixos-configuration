@@ -14,9 +14,7 @@ let
   '';
 in
 {
-  imports = [
-    ./plugins/waybar.nix
-  ];
+  imports = [];
 
   wayland.windowManager.hyprland = {
     enable = true;

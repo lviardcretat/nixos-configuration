@@ -6,7 +6,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
-    ./gui/hyprland/hyprland.nix
+    ./modules/gui/hyprland/hyprland.nix
   ];
 
   home = {
@@ -53,6 +53,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.hyprland.enable = true;
 
   programs.git = {
     enable = true;

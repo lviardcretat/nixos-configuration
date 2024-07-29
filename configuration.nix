@@ -10,8 +10,6 @@
 }: {
   imports = [ 
     ./hardware-configuration.nix
-    # Idk what is
-    # inputs.home-manager.nixosModules.default
   ];
 
   nix.nixPath = [
@@ -19,18 +17,6 @@
     "nixos-config=/home/loic/Projects/nixos-configuration/configuration.nix"
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
-
-  programs.hyprland.enable = true;
-
-  # not working
-  #home-manager {
-  #  extraSpecialArgs = { inherit inputs; };
-  #  users = {
-  #    loic = {
-  #      "loic" = import ./home.nix;
-  #    };
-  #  };
-  #};
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -96,20 +82,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  hyprland
-  floorp
-  vscodium
-  git
-  kitty
-  rofi-wayland  
-  pavucontrol
-#  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
