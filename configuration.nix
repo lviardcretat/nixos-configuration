@@ -2,34 +2,37 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ 
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [ 
+    ./hardware-configuration.nix
+    # Idk what is
+    # inputs.home-manager.nixosModules.default
+  ];
 
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
-{
-  imports =
-    [ 
-      (import "${home-manager}/nixos")
-# Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
-  home-manager.users.loic = {
-    /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "24.05";
-    programs.git = {
-      enable = true;
-      userName = "lviardcretat";
-      userEmail = "loic.viard-cretat@proton.me";
-      extraConfig = {
-        init.defaultBranch = "main";
-      };
-    };
-    /* Here goes the rest of your home-manager config, e.g. home.packages = [ pkgs.foo ]; */
-  };
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "nixos-config=/home/loic/Projects/nixos-configuration/configuration.nix"
+    "/nix/var/nix/profiles/per-user/root/channels"
+  ];
 
   programs.hyprland.enable = true;
+
+  # not working
+  #home-manager {
+  #  extraSpecialArgs = { inherit inputs; };
+  #  users = {
+  #    loic = {
+  #      "loic" = import ./home.nix;
+  #    };
+  #  };
+  #};
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
