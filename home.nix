@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./modules/gui/hyprland/hyprland.nix
-    ./modules/cli/alacritty.nix
+    ./modules/cli/kitty.nix
     ./modules/cli/zsh.nix
   ];
 
@@ -16,7 +16,6 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
-      alacritty
       android-tools
       dunst # Notification daemon
       eww # Standalone widget system
@@ -25,6 +24,8 @@
       git
       grim # Needed for screenshots
       heroic
+      kitty
+      libreoffice
       lm_sensors # Controlling fan speed
       lutris
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
