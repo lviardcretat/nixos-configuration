@@ -10,6 +10,7 @@
     ./modules/cli/kitty.nix
     ./modules/cli/zsh/zsh.nix
     ./modules/cli/fastfetch/fastfetch.nix
+    ./modules/vesktop.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -45,8 +46,8 @@
       typora
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
-      vesktop # Custom Discord desktop app
       vscodium
+      wl-clipboard
       yazi # Fast terminal file manager
       zsh
       # zed-editor Wait until it's really complete

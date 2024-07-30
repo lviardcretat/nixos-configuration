@@ -7,13 +7,10 @@
     enable = true;
     settings = {
       logo = {
-        source = "logo.png";
-        type = "kitty";
+        type = "kitty-direct";
+        source = "~/Projects/nixos-configuration/modules/cli/fastfetch/lotus.png";
         height = 20;
         width = 40;
-        padding = {
-          top = 5;
-        };
       };
       display = {
         separator = "  ";

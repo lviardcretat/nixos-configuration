@@ -133,8 +133,6 @@ in
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
 
-        
-
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
