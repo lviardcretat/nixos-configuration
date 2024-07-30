@@ -10,6 +10,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -22,6 +24,7 @@
           specialArgs = {inherit inputs;};
           modules = [
             ./configuration.nix
+            inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
               home-manager.users.loic = import ./home.nix;
               home-manager.extraSpecialArgs = specialArgs;

@@ -20,6 +20,17 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  stylix = {
+    enable = true;
+    image = ./modules/gui/stylix/wallpaper.jpg;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  };
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
   programs = {
     hyprland.enable = true;
     # Gaming mode : gamemoderun %command%
