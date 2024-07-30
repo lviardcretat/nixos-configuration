@@ -30,8 +30,10 @@
       enable = true;
       gamescopeSession.enable = true;
     };
-    # webcam/android cam
+    # Webcam/android cam
     adb.enable = true;
+    # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 
+    zsh.enable = true;
   };
 
   # Bootloader.
@@ -99,6 +101,7 @@
     description = "loic";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # This value determines the NixOS release from which the default
