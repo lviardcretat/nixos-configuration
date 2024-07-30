@@ -5,7 +5,6 @@
   ... 
 }:
 
-#${pkgs.waybar}/bin/waybar &
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
   # wait for monitors to connect

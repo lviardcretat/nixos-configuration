@@ -5,8 +5,9 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./modules/gui/hyprland/hyprland.nix
+    ./modules/cli/alacritty.nix
+    ./modules/cli/zsh.nix
   ];
 
   home = {
@@ -54,8 +55,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.hyprland.enable = true;
-
   programs.git = {
     enable = true;
     userName = "lviardcretat";
@@ -64,16 +63,4 @@
       init.defaultBranch = "main";
     };
   };
-
-  # Gaming mode : gamemoderun %command%
-  # FPS monitor : mangohud %command%
-  # Upscaling, windows manager problem : gamescope %command%
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamemode.enable = true;
-  
-  # webcam/android cam
-  programs.adb.enable = true;
 }

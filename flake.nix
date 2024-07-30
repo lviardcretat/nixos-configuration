@@ -25,6 +25,8 @@
             home-manager.nixosModules.home-manager {
               home-manager.users.loic = import ./home.nix;
               home-manager.extraSpecialArgs = specialArgs;
+              home-manager.useGlobalPkgs = true;            
+              home-manager.useUserPackages = true;
             }
           ];
         };
