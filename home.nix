@@ -9,7 +9,7 @@
     ./modules/gui/hyprland/hyprland.nix
     ./modules/cli/kitty.nix
     ./modules/cli/zsh/zsh.nix
-    ./modules/cli/fastfetch.nix
+    ./modules/cli/fastfetch/fastfetch.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
