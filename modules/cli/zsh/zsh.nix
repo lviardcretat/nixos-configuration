@@ -20,7 +20,7 @@
     };
 
     initExtra = ''
-      ${pkgs.nerdfetch}/bin/nerdfetch
+      ${pkgs.fastfetch}/bin/fastfetch
       echo ""
       eval "$(oh-my-posh init zsh --config ~/Projects/nixos-configuration/modules/cli/zsh/theme.omp.json)"
     '';

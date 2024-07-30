@@ -6,101 +6,76 @@
   home.file."Projects/nixos-configuration/modules/cli/zsh/theme.omp.json".text = ''
     {
       "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+      "palette": {
+        "raisin_black": "#${config.colorScheme.palette.base00}",
+        "jet": "#${config.colorScheme.palette.base01}",
+        "walnut_brown": "#${config.colorScheme.palette.base02}",
+        "walnut_brown_2":  "#${config.colorScheme.palette.base03}",
+        "khaki": "#${config.colorScheme.palette.base04}",
+        "dun": "#${config.colorScheme.palette.base05}",
+        "dutch_white": "#${config.colorScheme.palette.base06}",
+        "lemon_chiffon": "#${config.colorScheme.palette.base07}",
+        "cinnabar": "#${config.colorScheme.palette.base08}",
+        "white": "#FFFFFF"
+      },
       "blocks": [
         {
           "alignment": "left",
           "segments": [
             {
-              "background": "${config.colorScheme.colors.base00}",
-              "foreground": "#FFFFFF",
+              "background": "p:raisin_black",
+              "foreground": "p:white",
+              "powerline_symbol": "\ue0b4",
               "leading_diamond": "\ue0b6",
               "style": "diamond",
-              "template": " {{ .Icon }} ",
-              "trailing_diamond": "\ue0b0",
+              "template": "{{.Icon}} ",
               "type": "os"
             },
             {
-              "background": "#DE2121",
-              "foreground": "#FFFFFF",
-              "leading_diamond": "<transparent,#DE2121>\ue0b0</>",
+              "background": "p:raisin_black",
+              "foreground": "p:white",
+              "powerline_symbol": "\ue0b4",
               "style": "diamond",
-              "template": " \uf0e7 ",
-              "trailing_diamond": "\ue0b0",
-              "type": "root"
+              "template": "{{ .UserName }}",
+              "type": "session"
             },
             {
-              "background": "#26BDBB",
-              "foreground": "#0C212F",
-              "leading_diamond": "<transparent,#26BDBB>\ue0b0</>",
+              "background": "p:khaki",
+              "foreground": "p:raisin_black",
               "properties": {
-                "folder_icon": "...",
-                "folder_separator_icon": "<transparent> \ue0b1 </>",
-                "home_icon": "\ueb06",
+                "folder_icon": "..\ue5fe..",
+                "home_icon": "~",
                 "style": "agnoster_short"
               },
-              "style": "diamond",
-              "template": " {{ .Path }} ",
-              "trailing_diamond": "\ue0b0",
+              "powerline_symbol": "\ue0b4",
+              "style": "powerline",
+              "template": " {{ .Path }}",
               "type": "path"
             },
             {
-              "background": "#280C2E",
-              "background_templates": [
-                "{{ if or (.Working.Changed) (.Staging.Changed) }}#7621DE{{ end }}",
-                "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#7621DE{{ end }}",
-                "{{ if gt .Ahead 0 }}#7621DE{{ end }}",
-                "{{ if gt .Behind 0 }}#7621DE{{ end }}"
-              ],
-              "foreground": "#FFFFFF",
-              "powerline_symbol": "\ue0b0",
-              "properties": {
-                "fetch_stash_count": true,
-                "fetch_status": true,
-                "fetch_upstream_icon": true
-              },
+              "background": "p:lemon_chiffon",
+              "foreground": "p:raisin_black",
               "style": "powerline",
-              "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+              "properties": {
+                "branch_icon": "\ue725 ",
+                "cherry_pick_icon": "\ue29b ",
+                "commit_icon": "\uf417 ",
+                "fetch_status": false,
+                "fetch_upstream_icon": false,
+                "merge_icon": "\ue727 ",
+                "no_commits_icon": "\uf0c3 ",
+                "rebase_icon": "\ue728 ",
+                "revert_icon": "\uf0e2 ",
+                "tag_icon": "\uf412 "
+              },
+              "powerline_symbol": "\ue0b4",
+              "template": " {{ .HEAD }}",
               "type": "git"
-            },
-            {
-              "background": "#0C212F",
-              "foreground": "#FFFFFF",
-              "leading_diamond": "<transparent,#0C212F>\ue0b0</>",
-              "properties": {
-                "time_format": "15:04"
-              },
-              "style": "diamond",
-              "template": " {{ .CurrentDate | date .Format }} ",
-              "trailing_diamond": "\ue0b0",
-              "type": "time"
-            },
-            {
-              "background": "#26BDBB",
-              "foreground": "#0C212F",
-              "leading_diamond": "<transparent,#26BDBB>\ue0b0</>",
-              "properties": {
-                "style": "dallas",
-                "threshold": 0
-              },
-              "style": "diamond",
-              "template": " {{ .FormattedMs }}s ",
-              "trailing_diamond": "\ue0b0",
-              "type": "executiontime"
-            },
-            {
-              "background": "#910000",
-              "foreground": "#ffffff",
-              "leading_diamond": "<transparent,background>\ue0b0</>",
-              "style": "diamond",
-              "template": "<transparent> \uf12a</> {{ reason .Code }} ",
-              "trailing_diamond": "\ue0b0",
-              "type": "status"
             }
           ],
           "type": "prompt"
         }
       ],
-      "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏠\"}} @ {{.HostName}}",
       "final_space": true,
       "version": 2
     }

@@ -9,6 +9,7 @@
     ./modules/gui/hyprland/hyprland.nix
     ./modules/cli/kitty.nix
     ./modules/cli/zsh/zsh.nix
+    ./modules/cli/fastfetch.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -33,7 +34,7 @@
       lutris
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
-      nerdfetch # System info script
+      fastfetch # System info script
       nerdfonts
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller

@@ -1,10 +1,15 @@
 { 
   pkgs,
   inputs,
+  config,
   ... 
 }: {
-  programs.kitty = {
-    shellIntegration.enableZshIntegration = true;
-    # theme = "Gruvbox Dark"; Not working
-  };
+  home.file.".config/kitty/kitty.conf".text = ''
+    # BEGIN_KITTY_THEME
+    # Gruvbox Dark
+    include current-theme.conf
+    # END_KITTY_THEME
+
+    window_padding_width 15
+  '';
 }
