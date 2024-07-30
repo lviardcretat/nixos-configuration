@@ -3,6 +3,11 @@
   inputs,
   ... 
 }: {
+
+  imports = [
+    ./oh-my-posh-theme.nix
+  ];
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -16,7 +21,8 @@
 
     initExtra = ''
       ${pkgs.nerdfetch}/bin/nerdfetch
-      eval "$(oh-my-posh init zsh --config ~/Projects/nixos-configuration/modules/cli/zsh/amro.omp.json)"
+      echo ""
+      eval "$(oh-my-posh init zsh --config ~/Projects/nixos-configuration/modules/cli/zsh/theme.omp.json)"
     '';
 
     shellAliases = {

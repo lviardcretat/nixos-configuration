@@ -110,7 +110,7 @@ in
       };
 
       "$mainMod" = "SUPER";
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$fileManager" = "yazi";
       "$menu" = "rofi -show drun -show-icons";
 

@@ -5,10 +5,13 @@
   ...
 }: {
   imports = [
+    inputs.nix-colors.homeManagerModules.default
     ./modules/gui/hyprland/hyprland.nix
     ./modules/cli/kitty.nix
     ./modules/cli/zsh/zsh.nix
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   home = {
     username = "loic";
