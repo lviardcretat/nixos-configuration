@@ -15,7 +15,7 @@
     };
 
     initExtra = ''
-      ${pkgs.neofetch}/bin/neofetch
+      ${pkgs.nerdfetch}/bin/nerdfetch
       eval "$(oh-my-posh init zsh --config ~/Projects/nixos-configuration/modules/cli/zsh/amro.omp.json)"
     '';
 

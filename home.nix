@@ -31,7 +31,7 @@
       lutris
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
-      neofetch # System info script
+      nerdfetch # System info script
       nerdfonts
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
