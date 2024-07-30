@@ -3,5 +3,5 @@
   inputs,
   ... 
 }: {
-  programs.kitty.shellIntegration.enableFishIntegration = true;
+  programs.kitty.shellIntegration.enableZshIntegration = true;
 }

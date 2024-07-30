@@ -8,6 +8,7 @@
     ./modules/gui/hyprland/hyprland.nix
     ./modules/cli/kitty.nix
     ./modules/cli/zsh/zsh.nix
+    ./modules/cli/neofetch/neofetch.nix
   ];
 
   home = {
