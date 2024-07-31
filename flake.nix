@@ -14,6 +14,8 @@
     stylix.url = "github:danth/stylix";
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

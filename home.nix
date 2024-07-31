@@ -11,6 +11,7 @@
     ./modules/cli/zsh/zsh.nix
     ./modules/cli/fastfetch/fastfetch.nix
     ./modules/vesktop.nix
+    ./modules/gui/ags/ags.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
