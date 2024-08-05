@@ -6,12 +6,12 @@
 }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./modules/gui/hyprland/hyprland.nix
-    ./modules/cli/kitty.nix
-    ./modules/cli/zsh/zsh.nix
-    ./modules/cli/fastfetch/fastfetch.nix
-    ./modules/vesktop.nix
-    ./modules/gui/ags/ags.nix
+    ../../modules/gui/hyprland/hyprland.nix
+    ../../modules/cli/kitty.nix
+    ../../modules/cli/zsh/zsh.nix
+    ../../modules/cli/fastfetch/fastfetch.nix
+    ../../modules/vesktop.nix
+    ../../modules/gui/ags/ags.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -60,5 +60,5 @@
         init.defaultBranch = "main";
       };
     };
-  }
+  };
 }
