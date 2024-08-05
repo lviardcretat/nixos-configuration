@@ -27,10 +27,23 @@
         desktop = nixpkgs.lib.nixosSystem rec {
           specialArgs = {inherit inputs;};
           modules = [
-            ./configuration.nix
+            ./systems/desktop/configuration.nix
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
-              home-manager.users.loic = import ./home.nix;
+              home-manager.users.loic = import ./systems/desktop/home.nix;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.useGlobalPkgs = true;            
+              home-manager.useUserPackages = true;
+            }
+          ];
+        };
+        laptop = nixpkgs.lib.nixosSystem rec {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./systems/laptop/configuration.nix
+            inputs.stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager {
+              home-manager.users.loic = import ./systems/laptop/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.useGlobalPkgs = true;            
               home-manager.useUserPackages = true;

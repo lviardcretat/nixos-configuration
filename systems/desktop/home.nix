@@ -33,7 +33,7 @@
       kitty
       libreoffice
       lm_sensors # Controlling fan speed
-      lutris
+      lutris      
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
       fastfetch # System info script
@@ -43,7 +43,6 @@
       protonup-ng
       rofi-wayland # App menu
       slurp # Needed for screenshots
-      swww # Animated wallpaper daemon
       typora
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
@@ -51,7 +50,7 @@
       wl-clipboard
       yazi # Fast terminal file manager
       zsh
-      # zed-editor Wait until it's really complete
+      # Zed-editor Wait until it's really complete
     ];
 
     sessionVariables = {
@@ -59,15 +58,16 @@
     };
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = "lviardcretat";
-    userEmail = "loic.viard-cretat@proton.me";
-    extraConfig = {
-      init.defaultBranch = "main";
+  programs = {
+    # Let Home Manager install and manage itself
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "lviardcretat";
+      userEmail = "loic.viard-cretat@proton.me";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
-  };
+  }
 }

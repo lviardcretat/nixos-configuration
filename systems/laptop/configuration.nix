@@ -25,7 +25,7 @@
     autoEnable = true;
     image = ./modules/gui/stylix/wallpaper.jpg;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   };
 
   fonts.packages = with pkgs; [
@@ -34,14 +34,6 @@
 
   programs = {
     hyprland.enable = true;
-    # Gaming mode : gamemoderun %command%
-    # FPS monitor : mangohud %command%
-    # Upscaling, windows manager problem : gamescope %command%
-    gamemode.enable = true;
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
     # Webcam/android cam
     adb.enable = true;
     # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 

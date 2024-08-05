@@ -14,12 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c6b9b622-a335-424c-abc3-4a810a16cde5";
+    { 
+      device = "/dev/disk/by-uuid/c6b9b622-a335-424c-abc3-4a810a16cde5";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4C0E-9A74";
+    { 
+      device = "/dev/disk/by-uuid/4C0E-9A74";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -34,5 +36,5 @@
   # networking.interfaces.enp42s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
