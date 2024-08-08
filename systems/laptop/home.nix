@@ -37,6 +37,7 @@
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       rofi-wayland # App menu
+      sassc
       slurp # Needed for screenshots
       typora
       unzip

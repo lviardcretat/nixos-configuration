@@ -42,6 +42,7 @@
       pavucontrol # Volume controller
       protonup-ng
       rofi-wayland # App menu
+      sassc
       slurp # Needed for screenshots
       typora
       unzip

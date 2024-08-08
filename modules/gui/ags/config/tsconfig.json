@@ -1,4 +1,5 @@
 {
+  "allowImportingTsExtensions": true,
   "compilerOptions": {
     "target": "ES2022",
     "module": "ES2022",
