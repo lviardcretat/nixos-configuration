@@ -80,10 +80,18 @@
   };
 
   services = {
-    # Configure keymap in X11
-    xserver.xkb = {
-      layout = "fr";
-      variant = "";
+    xserver = {
+      enable = true;
+      # Configure keymap in X11
+      xkb = {
+        layout = "fr";
+        variant = "";
+      };
+    };
+
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
     };
 
     # Enable automatic login for the user.

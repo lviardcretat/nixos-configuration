@@ -25,7 +25,10 @@
     in {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem rec {
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+            host = "desktop";
+          };
           modules = [
             ./systems/desktop/configuration.nix
             inputs.stylix.nixosModules.stylix
@@ -38,7 +41,10 @@
           ];
         };
         laptop = nixpkgs.lib.nixosSystem rec {
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+            host = "laptop";
+          };
           modules = [
             ./systems/laptop/configuration.nix
             inputs.stylix.nixosModules.stylix

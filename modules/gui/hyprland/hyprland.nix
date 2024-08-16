@@ -2,19 +2,15 @@
   pkgs,
   lib,
   config,
+  host,
   ... 
 }:
 
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-  # wait for monitors to connect
-  sleep 3
-  ags &
   '';
 in
 {
-  imports = [];
-
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -24,10 +20,13 @@ in
         "HYPRCURSOR_SIZE,24"
       ];
 
-      monitor = [
-        # See https://wiki.hyprland.org/Configuring/Monitors/
-        "eDP-1,1920x1080@60,0x0,1"
-      ];
+      
+      # See https://wiki.hyprland.org/Configuring/Monitors/
+      monitor = if (host == "desktop") then
+        ["DP-2,1920x1080@240,0x0,1,transform,2"
+         "DP-3,1920x1080@240,0x1080,1,transform,2"]
+      else
+        ["eDP-1,1920x1080@60,0x0,1"];
 
       general = { 
         gaps_in = 5;
@@ -125,6 +124,7 @@ in
         # Rofi launcher
         "$mainMod, space, exec, $menu"
         "$mainMod, Y, exec, grim -g \"$(slurp)\" - | wl-copy"
+        "$mainMod, L, exec, ags -t bar0"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
