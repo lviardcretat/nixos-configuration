@@ -99,6 +99,7 @@ const Bar = (monitor: number) => Widget.Window({
                         vertical: true,
                         spacing: 25,
                         hpack: 'fill',
+                        hextend: true,
                         children: [
                             Widget.Box({
                                 class_name: "players",
