@@ -11,7 +11,7 @@ const date = Variable("", {
 
 const audio = await Service.import('audio')
 const mpris = await Service.import('mpris')
-const marginHeight: number = Math.floor(Gdk.Screen.height() * 0.025);
+const marginHeight: number = Math.floor(Gdk.Screen.height() * 0.1);
 const marginWidth: number = Math.floor(Gdk.Screen.width() * 0.025);
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -23,36 +23,29 @@ const Player = player => Widget.Button({
     }),
 });
 
-function calcSize(orientation: string, ratio: number): number {
-    if(orientation == 'height') {
-        return Math.floor(Gdk.Screen.height() * ratio - marginHeight);
-    }
-    return Math.floor(Gdk.Screen.width() * ratio - marginWidth);
-}
-
 const Bar = (monitor: number) => Widget.Window({
     monitor,
     name: `bar${monitor}`,
     anchor: ['left', 'top', 'bottom'],
     layer: 'top',
     exclusivity: 'ignore',
-    child: Widget.Box({
+    child: Widget.CenterBox({
         class_name: 'container',
         homogeneous: false,
         vertical: true,
         css: `min-width: ${Math.floor(Gdk.Screen.width() * 0.3)}px; padding: ${marginHeight}px ${marginWidth}px ${marginHeight}px ${marginWidth}px;`,
-        children: [
+        startWidget:
             Widget.Box({
                 homogeneous: false,
                 vertical: true,
+                hpack: 'fill',
+                vpack: 'fill',
                 class_name: "header_container",
-                css: `min-height: ${calcSize('height', 0.4)}px;`,
                 children: [
                     Widget.Box({
                         homogeneous: false,
                         vertical: true,
                         class_name: "date_container",
-                        css: `min-height: ${calcSize('height', 0.1)}px;`,
                         children: [
                             Widget.Label({ 
                                 label: time.bind(),
@@ -70,7 +63,6 @@ const Bar = (monitor: number) => Widget.Window({
                         homogeneous: false,
                         vertical: true,
                         class_name: "searchbar_container",
-                        css: `min-height: ${calcSize('height', 0.3)}px;`,
                         children: [
                             Widget.Entry({
                                 class_name: 'searchbar',
@@ -82,25 +74,31 @@ const Bar = (monitor: number) => Widget.Window({
                     }),
                 ]
             }),
-            Widget.Box({
+        centerWidget: Widget.Box({
+                vertical: true,
+                css: `min-height: ${Math.floor(Gdk.Screen.height() * 0.3 - marginHeight * 2)}px`,
+                children: [Widget.Label({label: " "})],
+            }),
+        endWidget: Widget.Box({
                 homogeneous: false,
                 vertical: false,
+                hpack: 'fill',
+                vpack: 'fill',
                 class_name: "footer_container",
-                css: `min-height: ${calcSize('height', 0.6)}px;`,
-                children: [
-                    Widget.Slider({
+                children: [Widget.Slider({
                         vertical: true,
                         class_name: "brightness_slider",
-                        css: `min-width: ${calcSize('width', 0.025)}px;  max-width: ${calcSize('width', 0.025)}px`,
                         drawValue: false,
+                        hpack: 'start',
                         on_change: self => brightness.screen_value = self.value,
                         value: brightness.bind('screen_value'),
                     }),
                     Widget.Box({
                         class_name: "buttons_container",
-                        css: `min-width: ${calcSize('width', 0.25)}px; max-width: ${calcSize('width', 0.25)}`,
                         homogeneous: true,
                         vertical: true,
+                        spacing: 25,
+                        hpack: 'fill',
                         children: [
                             Widget.Box({
                                 class_name: "players",
@@ -110,6 +108,7 @@ const Bar = (monitor: number) => Widget.Window({
                                 class_name: "buttons_container_line_1",
                                 homogeneous: true,
                                 vertical: false,
+                                spacing: 50,
                                 children: [
                                     Widget.Button({
                                         class_name: "wifi_button",
@@ -127,6 +126,7 @@ const Bar = (monitor: number) => Widget.Window({
                                 class_name: "buttons_container_line_2",
                                 homogeneous: true,
                                 vertical: false,
+                                spacing: 50,
                                 children: [
                                     Widget.Button({
                                         class_name: "shutdown_button",
@@ -144,15 +144,14 @@ const Bar = (monitor: number) => Widget.Window({
                     }),
                     Widget.Slider({
                         class_name: "sound_slider",
-                        css: `min-width: ${calcSize('width', 0.025)}px; max-width: ${calcSize('width', 0.025)}`,
                         drawValue: false,
                         vertical: true,
+                        hpack: 'end',
                         onChange: ({ value }) => audio['speaker'].volume = value,
                         value: audio['speaker'].bind('volume'),
                     })
                 ]
             })
-        ]
     })
 })
 
