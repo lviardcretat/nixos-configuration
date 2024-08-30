@@ -38,6 +38,7 @@
       mpv # Media player
       fastfetch # System info script
       nerdfonts
+      obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       protonup-ng
