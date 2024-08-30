@@ -28,6 +28,10 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   };
 
+  environment.systemPackages = [
+    inputs.zen-browser.packages."x86_64-linux".default
+  ];
+
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
