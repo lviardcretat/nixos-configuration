@@ -16,6 +16,8 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     ags.url = "github:Aylur/ags";
+
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

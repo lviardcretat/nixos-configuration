@@ -43,6 +43,7 @@
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       vscodium
+      wine
       wl-clipboard
       yazi # Fast terminal file manager
       zsh
