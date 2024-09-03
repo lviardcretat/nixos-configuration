@@ -37,7 +37,10 @@
   ];
 
   programs = {
-    hyprland.enable = true;
+    hyprland = { 
+      enable = true;
+      xwayland.enable = true;
+    };
     # Webcam/android cam
     adb.enable = true;
     # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 

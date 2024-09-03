@@ -37,7 +37,10 @@
   ];
 
   programs = {
-    hyprland.enable = true;
+    hyprland = { 
+      enable = true;
+      xwayland.enable = true;
+    };
     # Gaming mode : gamemoderun %command%
     # FPS monitor : mangohud %command%
     # Upscaling, windows manager problem : gamescope %command%
