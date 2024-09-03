@@ -38,9 +38,11 @@
       mpv # Media player
       fastfetch # System info script
       nerdfonts
+      nodejs_20
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
+      pipewire
       protonup-ng
       rofi-wayland # App menu
       sassc
@@ -50,10 +52,13 @@
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
       vscodium
+      wireplumber
       wl-clipboard
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
       yazi # Fast terminal file manager
       zsh
-      # Zed-editor Wait until it's really complete
+      zed-editor
     ];
 
     sessionVariables = {

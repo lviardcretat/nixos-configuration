@@ -34,9 +34,11 @@
       mpv # Media player
       fastfetch # System info script
       nerdfonts
+      nodejs_20
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
+      pipewire
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
@@ -46,10 +48,13 @@
       viewnior # Fast and simple image viewer
       vscodium
       wine
+      wireplumber
       wl-clipboard
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
       yazi # Fast terminal file manager
       zsh
-      # Zed-editor Wait until it's really complete
+      zed-editor
     ];
   };
 
