@@ -37,7 +37,10 @@
   ];
 
   programs = {
-    hyprland.enable = true;
+    hyprland = { 
+      enable = true;
+      xwayland.enable = true;
+    };
     # Webcam/android cam
     adb.enable = true;
     # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 
@@ -102,7 +105,21 @@
       };
       pulse.enable = true;
       jack.enable = true;
+      wireplumber.enable = true;
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["gtk" "hyprland"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   # Enable sound

@@ -37,7 +37,10 @@
   ];
 
   programs = {
-    hyprland.enable = true;
+    hyprland = { 
+      enable = true;
+      xwayland.enable = true;
+    };
     # Gaming mode : gamemoderun %command%
     # FPS monitor : mangohud %command%
     # Upscaling, windows manager problem : gamescope %command%
@@ -110,7 +113,21 @@
       };
       pulse.enable = true;
       jack.enable = true;
+      wireplumber.enable = true;
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["gtk" "hyprland"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   # Enable sound

@@ -29,6 +29,7 @@
       git
       grim # Needed for screenshots
       kitty
+      libjpeg
       libreoffice
       lm_sensors # Controlling fan speed
       mpv # Media player
@@ -38,6 +39,7 @@
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       protonvpn-gui_legacy
+      pipewire
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
@@ -47,6 +49,7 @@
       viewnior # Fast and simple image viewer
       vscodium
       wine
+      wireplumber
       wl-clipboard
       yazi # Fast terminal file manager
       zsh

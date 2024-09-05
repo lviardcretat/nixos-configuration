@@ -31,6 +31,7 @@
       grim # Needed for screenshots
       heroic
       kitty
+      libjpeg
       libreoffice
       lm_sensors # Controlling fan speed
       lutris      
@@ -41,6 +42,7 @@
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
+      pipewire
       protonup-ng
       protonvpn-gui_legacy
       rofi-wayland # App menu
@@ -51,6 +53,7 @@
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
       vscodium
+      wireplumber
       wl-clipboard
       yazi # Fast terminal file manager
       zsh
