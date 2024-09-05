@@ -8,14 +8,7 @@
     ./hardware-configuration.nix
   ];
 
-  nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    nixPath = [
-      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-      "nixos-config=/home/loic/Projects/nixos-configuration/configuration.nix"
-      "/nix/var/nix/profiles/per-user/root/channels"
-    ];
-  };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

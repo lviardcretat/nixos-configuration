@@ -8,6 +8,7 @@
 
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   '';
 in
 {
@@ -175,7 +176,6 @@ in
       windowrulev2 = [];
 
       exec-once = ''${startupScript}/bin/start'';
-      exec-once= ''dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP''
     };
   };
 }
