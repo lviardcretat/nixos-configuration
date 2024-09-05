@@ -42,10 +42,11 @@
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       protonup-ng
+      protonvpn-gui_legacy
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
-      typora
+      spotify
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
