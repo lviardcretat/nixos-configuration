@@ -31,6 +31,7 @@
       grim # Needed for screenshots
       heroic
       kitty
+      libjpeg
       libreoffice
       lm_sensors # Controlling fan speed
       lutris      
@@ -38,27 +39,25 @@
       mpv # Media player
       fastfetch # System info script
       nerdfonts
-      nodejs_20
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       pipewire
       protonup-ng
+      protonvpn-gui_legacy
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
-      typora
+      spotify
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
       vscodium
       wireplumber
       wl-clipboard
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
       yazi # Fast terminal file manager
       zsh
-      zed-editor
+      # Zed-editor Wait until it's really complete
     ];
 
     sessionVariables = {

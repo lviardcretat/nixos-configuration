@@ -110,7 +110,7 @@
     };
   };
 
-    xdg.portal = {
+  xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
     config = {

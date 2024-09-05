@@ -29,20 +29,21 @@
       git
       grim # Needed for screenshots
       kitty
+      libjpeg
       libreoffice
       lm_sensors # Controlling fan speed
       mpv # Media player
       fastfetch # System info script
       nerdfonts
-      nodejs_20
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
+      protonvpn-gui_legacy
       pipewire
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
-      typora
+      spotify
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
@@ -50,11 +51,9 @@
       wine
       wireplumber
       wl-clipboard
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
       yazi # Fast terminal file manager
       zsh
-      zed-editor
+      # Zed-editor Wait until it's really complete
     ];
   };
 
