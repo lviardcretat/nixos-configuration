@@ -148,7 +148,9 @@ in
 
         # Rofi launcher
         "$mainMod, space, exec, $menu"
-        "$mainMod, Y, exec, grim -g \"$(slurp)\" - | wl-copy"
+        "$mainMod, Y, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        "$mainMod SHIFT, Y, exec, wf-recorder -g \"$(slurp)\" -f ~/Recordings/recording_$(date +\"%Y-%m-%d_%H:%M:%S.mp4\")"
+        "$mainMod SHIFT, C, exec, killall -s SIGINT wf-recorder"
         "$mainMod, L, exec, ags -t bar0"
 
         # Move focus with mainMod + arrow keys

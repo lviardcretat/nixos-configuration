@@ -28,6 +28,7 @@
       floorp
       git
       grim # Needed for screenshots
+      killall
       kitty
       libjpeg
       libreoffice
@@ -43,12 +44,14 @@
       sassc
       slurp # Needed for screenshots
       spotify
+      swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
       vscodium
       wine
       wl-clipboard
+      wf-recorder
       yazi # Fast terminal file manager
       zsh
       # Zed-editor Wait until it's really complete

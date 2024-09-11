@@ -95,6 +95,9 @@
       wayland.enable = true;
     };
 
+    gvfs.enable = true;
+    udisks2.enable = true;
+
     # Enable automatic login for the user.
     getty.autologinUser = "loic";
 
@@ -113,6 +116,7 @@
 
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     xdgOpenUsePortal = true;
     config = {
       common.default = ["gtk"];
