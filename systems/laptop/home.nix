@@ -25,8 +25,8 @@
       android-tools
       dunst # Notification daemon
       eww # Standalone widget system
-      floorp
       git
+      adwaita-icon-theme # VM
       grim # Needed for screenshots
       killall
       kitty
@@ -34,6 +34,7 @@
       libreoffice
       lm_sensors # Controlling fan speed
       mpv # Media player
+      musescore
       fastfetch # System info script
       nerdfonts
       obsidian
@@ -43,12 +44,18 @@
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
+      spice spice-gtk # VM
+      spice-protocol # VM
       spotify
       swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
+      virt-manager # VM
+      virt-viewer # VM
       vscodium
+      win-spice # VM
+      win-virtio # VM
       wine
       wl-clipboard
       wf-recorder

@@ -25,7 +25,6 @@
       android-tools
       dunst # Notification daemon
       eww # Standalone widget system
-      floorp
       gamemode
       git
       grim # Needed for screenshots
