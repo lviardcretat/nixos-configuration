@@ -29,7 +29,20 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
+  virtualisation = {
+    libvirtd = { 
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
+
   programs = {
+    dconf.enable = true;
     direnv.enable = true;
     hyprland = { 
       enable = true;
@@ -112,6 +125,8 @@
       jack.enable = true;
       wireplumber.enable = true;
     };
+
+    spice-vdagentd.enable = true;
   };
 
   xdg.portal = {

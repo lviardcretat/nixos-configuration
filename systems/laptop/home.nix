@@ -22,11 +22,12 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      adwaita-icon-theme # VM
       android-tools
       dunst # Notification daemon
       eww # Standalone widget system
+      fastfetch # System info script
       git
-      adwaita-icon-theme # VM
       grim # Needed for screenshots
       killall
       kitty
@@ -35,8 +36,8 @@
       lm_sensors # Controlling fan speed
       mpv # Media player
       musescore
-      fastfetch # System info script
       nerdfonts
+      nodejs_22
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
@@ -53,7 +54,7 @@
       viewnior # Fast and simple image viewer
       virt-manager # VM
       virt-viewer # VM
-      vscodium
+      vscode
       win-spice # VM
       win-virtio # VM
       wine

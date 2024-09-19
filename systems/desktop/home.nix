@@ -22,9 +22,11 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      adwaita-icon-theme # VM
       android-tools
       dunst # Notification daemon
       eww # Standalone widget system
+      fastfetch # System info script
       gamemode
       git
       grim # Needed for screenshots
@@ -37,8 +39,8 @@
       lutris      
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
-      fastfetch # System info script
       nerdfonts
+      nodejs_22
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
@@ -47,13 +49,19 @@
       rofi-wayland # App menu
       sassc
       slurp # Needed for screenshots
+      spice spice-gtk # VM
+      spice-protocol # VM
       spotify
       swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       ventoy # Bootable USB solution
       viewnior # Fast and simple image viewer
-      vscodium
+      virt-manager # VM
+      virt-viewer # VM
+      vscode
+      win-spice # VM
+      win-virtio # VM
       wl-clipboard
       wf-recorder
       yazi # Fast terminal file manager
