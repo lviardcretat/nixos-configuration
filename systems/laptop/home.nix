@@ -10,6 +10,7 @@
     ../../modules/cli/kitty.nix
     ../../modules/cli/zsh/zsh.nix
     ../../modules/cli/fastfetch/fastfetch.nix
+    ../../modules/cli/direnv/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
   ];
@@ -37,26 +38,19 @@
       mpv # Media player
       musescore
       nerdfonts
-      nodejs_22
+      nix-direnv
       obsidian
       oh-my-posh # A prompt theme engine for any shell
       pavucontrol # Volume controller
       protonvpn-gui_legacy
       rofi-wayland # App menu
-      sassc
       slurp # Needed for screenshots
-      spice spice-gtk # VM
-      spice-protocol # VM
       spotify
       swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
-      virt-manager # VM
-      virt-viewer # VM
       vscode
-      win-spice # VM
-      win-virtio # VM
       wine
       wl-clipboard
       wf-recorder
