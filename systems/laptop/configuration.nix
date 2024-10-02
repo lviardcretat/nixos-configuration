@@ -21,9 +21,14 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   };
 
-  environment.systemPackages = [
-    inputs.zen-browser.packages."x86_64-linux".default
-  ];
+  environment = {
+    systemPackages = [
+      inputs.zen-browser.packages."x86_64-linux".default
+    ];
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -52,6 +57,13 @@
     adb.enable = true;
     # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 
     zsh.enable = true;
+    # Workaround to enable biomeJS VSCODE extension
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        nodePackages_latest.npm
+      ];
+    };
   };
 
   # Bootloader.
@@ -142,7 +154,7 @@
   users.users.loic = {
     isNormalUser = true;
     description = "loic";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
