@@ -1,145 +1,104 @@
 { 
   pkgs,
+  config,
   inputs,
   ... 
 }: {
   programs.fastfetch = {
     enable = true;
     settings = {
-      logo = {
-        type = "kitty-direct";
-        source = "~/Projects/nixos-configuration/modules/cli/fastfetch/lotus.png";
-        height = 20;
-        width = 40;
+      "$schema" = "https =//github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
+      "logo" = {
+        source = "~/Projects/nixos-configuration/modules/cli/fastfetch/logo.png";
+        "type" = "kitty";
+          "height" = 20;
+          "padding" = {
+          "top" = 1;
+        };
       };
-      display = {
-        separator = "  ";
+      "display" = {
+        "separator" = " ➜  ";
       };
-      modules = [
+      "modules" = [
+        "break"
+        "break"
+        "break"
         {
-          type = "custom";
-          format = "┌───────────────────────────────────────────────────┐";
+            "type" = "os";
+            "key" = "OS   ";
         }
         {
-          type = "os";
-          key = " OS";
-          keyColor = "yellow";
+            "type" = "kernel";
+            "key" = " ├  ";
         }
         {
-          type = "kernel";
-          key = "│ ├";
-          keyColor = "yellow";
+            "type" = "packages";
+            "format" = "{} (nixpkgs)";
+            "key" = " ├ 󰏖 ";
         }
         {
-          type = "packages";
-          key = "│ ├󰏖";
-          keyColor = "yellow";
-        }
-        {
-          type = "shell";
-          key = "│ └";
-          keyColor = "yellow";
-        }
-        {
-          type = "de";
-          key = " DE";
-          keyColor = "blue";
-        }
-        {
-          type = "wm";
-          key = "│ ├";
-          keyColor = "blue";
-        }
-        {
-          type = "lm";
-          key = "│ ├󰧨";
-          keyColor = "blue";
-        }
-        {
-          type = "wmtheme";
-          key = "│ ├󰉼";
-          keyColor = "blue";
-        }
-        {
-          type = "icons";
-          key = "│ ├󰀻";
-          keyColor = "blue";
-        }
-        {
-          type = "terminal";
-          key = "│ ├";
-          keyColor = "blue";
-        }
-        {
-          type = "wallpaper";
-          key = "│ └󰸉";
-          keyColor = "blue";
-        }
-        {
-          type = "host";
-          key = " PC";
-          keyColor = "green";
-        }
-        {
-          type = "cpu";
-          key = "│ ├";
-          keyColor = "green";
-        }
-        {
-          type = "gpu";
-          key = "│ ├󰍛";
-          keyColor = "green";
-        }
-        {
-          type = "disk";
-          key = "│ ├";
-          keyColor = "green";
-        }
-        {
-          type = "memory";
-          key = "│ ├󰑭";
-          keyColor = "green";
-        }
-        {
-          type = "swap";
-          key = "│ ├󰓡";
-          keyColor = "green";
-        }
-        {
-          type = "uptime";
-          key = "│ ├󰅐";
-          keyColor = "green";
-        }
-        {
-          type = "display";
-          key = "│ └󰍹";
-          keyColor = "green";
-        }
-        {
-          type = "sound";
-          key = " SND";
-          keyColor = "cyan";
-        }
-        {
-          type = "player";
-          key = "│ ├󰥠";
-          keyColor = "cyan";
-        }
-        {
-          type = "media";
-          key = "│ └󰝚";
-          keyColor = "cyan";
-        }
-        {
-          type = "custom";
-          format = "└───────────────────────────────────────────────────┘";
+            "type" = "shell";
+            "key" = " └  ";
         }
         "break"
         {
-          type = "colors";
-          paddingLeft = 0;
-          symbol = "block";
+            "type" = "wm";
+            "key" = "WM   ";
         }
+        {
+            "type" = "wmtheme";
+            "key" = " ├ 󰉼 ";
+        }
+        {
+            "type" = "icons";
+            "key" = " ├ 󰀻 ";
+        }
+        {
+            "type" = "cursor";
+            "key" = " ├  ";
+        }
+        {
+            "type" = "terminal";
+            "key" = " ├  ";
+        }
+        {
+            "type" = "terminalfont";
+            "key" = " └  ";
+        }
+        "break"
+        {
+            "type" = "host";
+            "format" = "{5} {1} Type {2}";
+            "key" = "PC   ";
+        }
+        {
+            "type" = "cpu";
+            "format" = "{1} ({3}) @ {7} GHz";
+            "key" = " ├  ";
+        }
+        {
+            "type" = "gpu";
+            "format" = "{1} {2} @ {12} GHz";            
+            "key" = " ├ 󰢮 ";
+        }
+        {
+            "type" = "memory";
+            "key" = " ├  ";
+        }
+        {
+            "type" = "swap";
+            "key" = " ├ 󰓡 ";
+        }
+        {
+            "type" = "disk";
+            "key" = " ├ 󰋊 ";
+        }
+        {
+            "type" = "monitor";
+            "key" = " └  ";
+        }
+        "break"
+        "break"
       ];
     };
   };

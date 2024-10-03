@@ -10,7 +10,7 @@
     ../../modules/cli/kitty.nix
     ../../modules/cli/zsh/zsh.nix
     ../../modules/cli/fastfetch/fastfetch.nix
-    ../../modules/cli/direnv/direnv.nix
+    ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
   ];
@@ -28,6 +28,7 @@
       dunst # Notification daemon
       eww # Standalone widget system
       fastfetch # System info script
+      fzf
       git
       grim # Needed for screenshots
       killall
@@ -55,6 +56,7 @@
       wl-clipboard
       wf-recorder
       yazi # Fast terminal file manager
+      zoxide
       zsh
       # Zed-editor Wait until it's really complete
     ];

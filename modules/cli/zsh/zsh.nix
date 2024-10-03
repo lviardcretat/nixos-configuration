@@ -24,6 +24,7 @@
       ${pkgs.fastfetch}/bin/fastfetch
       echo ""
       eval "$(oh-my-posh init zsh --config ~/Projects/nixos-configuration/modules/cli/zsh/theme.omp.json)"
+      eval "$(zoxide init zsh)"
     '';
 
     shellAliases = {

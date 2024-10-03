@@ -11,5 +11,7 @@
     # END_KITTY_THEME
 
     window_padding_width 15
+    background_blur 0.6
+    background_opacity 0.4
   '';
 }
