@@ -29,6 +29,7 @@
       eww # Standalone widget system
       fastfetch # System info script
       fzf
+      gimp
       git
       grim # Needed for screenshots
       killall
