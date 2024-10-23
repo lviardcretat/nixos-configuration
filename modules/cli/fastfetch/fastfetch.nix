@@ -4,6 +4,10 @@
   inputs,
   ... 
 }: {
+  home.packages = with pkgs; [
+    fastfetch # System info script
+  ];
+  
   programs.fastfetch = {
     enable = true;
     settings = {

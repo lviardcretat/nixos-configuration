@@ -34,18 +34,6 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-  virtualisation = {
-    libvirtd = { 
-      enable = true;
-      qemu = {
-        swtpm.enable = true;
-        ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
-      };
-    };
-    spiceUSBRedirection.enable = true;
-  };
-
   programs = {
     dconf.enable = true;
     direnv.enable = true;
@@ -75,9 +63,12 @@
   };
 
   # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   networking = {
@@ -113,6 +104,12 @@
         layout = "fr";
         variant = "";
       };
+      videoDrivers = [ "amdgpu" ];
+      # File manager
+      # Mount, trash, and other functionalities
+      gvfs.enable = true;
+      # Thumbnail support for images
+      tumbler.enable = true;
     };
 
     displayManager.sddm = {
@@ -149,11 +146,13 @@
       common.default = ["gtk"];
       hyprland.default = ["gtk" "hyprland"];
     };
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
   };
+
+  hardware.graphics.enable = true;
 
   # Enable sound
   security.rtkit.enable = true;

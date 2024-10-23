@@ -4,6 +4,9 @@
   host,
   ... 
 }: {
+  home.packages = with pkgs; [
+    zsh
+  ];
 
   imports = [
     ./oh-my-posh-theme.nix
@@ -28,10 +31,10 @@
     '';
 
     shellAliases = {
-      cdnix = "cd ~/Projects/nixos-configuration && codium ~/Projects/nixos-configuration";
+      cdnix = "cd ~/Projects/nixos-configuration && code ~/Projects/nixos-configuration";
       nixbuild = "sudo nixos-rebuild switch --flake ~/Projects/nixos-configuration/#${host}";
       nixup = "sudo nixos-rebuild switch --upgrade --flake ~/Projects/nixos-configuration/#${host}";
-      nixflakeup = "sudo nix flake update ~/Projects/nixos-configuration/#";
+      nixflakeup = "nix flake update --flake /home/loic/Projects/nixos-configuration/#";
       nixclean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
     };
   };

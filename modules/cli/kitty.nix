@@ -4,6 +4,10 @@
   config,
   ... 
 }: {
+  home.packages = with pkgs; [
+    kitty
+  ];
+
   home.file.".config/kitty/kitty.conf".text = ''
     # BEGIN_KITTY_THEME
     # Gruvbox Dark

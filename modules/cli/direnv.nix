@@ -4,9 +4,10 @@
   host,
   ... 
 }: {
+  home.packages = with pkgs; [
+    nix-direnv
+  ];
 
-  imports = [];
-  
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;

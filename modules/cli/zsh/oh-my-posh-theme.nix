@@ -3,6 +3,10 @@
   config,
   ...
 }: {
+  home.packages = with pkgs; [
+    oh-my-posh # A prompt theme engine for any shell
+  ];
+
   home.file."Projects/nixos-configuration/modules/cli/zsh/theme.omp.json".text = ''
     {
       "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",

@@ -13,16 +13,16 @@ let
 
   bindWorkspaceSwitch =
     if (host == "desktop") then
-      ["$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
-      "$mainMod, 5, workspace, 5"
-      "$mainMod, 6, workspace, 6"
-      "$mainMod, 7, workspace, 7"
-      "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
-      "$mainMod, 0, workspace, 10"]
+      ["$mainMod, code:ampersand , workspace, 1"
+      "$mainMod, code:grave, workspace, 2"
+      "$mainMod, code:quotedbl, workspace, 3"
+      "$mainMod, code:leftsinglequotemark, workspace, 4"
+      "$mainMod, code:parenleft, workspace, 5"
+      "$mainMod, \-, workspace, 6"
+      "$mainMod, \è, workspace, 7"
+      "$mainMod, code:underscore, workspace, 8"
+      "$mainMod, \ç, workspace, 9"
+      "$mainMod, code:parenright, workspace, 10"]
     else
       ["$mainMod, F1, workspace, 1"
       "$mainMod, F2, workspace, 2"
@@ -48,7 +48,7 @@ in
       
       # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor = if (host == "desktop") then
-        ["DP-2,1920x1080@240,0x0,1,transform,2"
+        ["DP-2,1920x1080@240,0x0,1"
          "DP-3,1920x1080@240,0x1080,1,transform,2"]
       else
         ["eDP-1,1920x1080@60,0x0,1"];
