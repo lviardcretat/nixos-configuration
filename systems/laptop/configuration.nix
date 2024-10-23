@@ -52,6 +52,16 @@
         nodePackages_latest.npm
       ];
     };
+    # File manager
+    xfconf.enable = true;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+          thunar-archive-plugin
+          thunar-volman
+          thunar-media-tags-plugin
+      ];
+    };
   };
 
   # Bootloader.
@@ -102,6 +112,12 @@
 
     # Enable automatic login for the user.
     getty.autologinUser = "loic";
+
+    # File manager
+    # Mount, trash, and other functionalities
+    gvfs.enable = true;
+    # Thumbnail support for images
+    tumbler.enable = true;
 
     # Enable sound
     pipewire = {

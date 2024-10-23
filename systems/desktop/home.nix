@@ -13,7 +13,6 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
-    ../../modules/thunar.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -55,6 +54,7 @@
       vscode
       wl-clipboard
       wf-recorder
+      xfce.thunar
       zoxide
       # Zed-editor Wait until it's really complete
     ];

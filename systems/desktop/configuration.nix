@@ -60,6 +60,16 @@
         nodePackages_latest.npm
       ];
     };
+    # File manager
+    xfconf.enable = true;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+          thunar-archive-plugin
+          thunar-volman
+          thunar-media-tags-plugin
+      ];
+    };
   };
 
   # Bootloader.
@@ -105,11 +115,6 @@
         variant = "";
       };
       videoDrivers = [ "amdgpu" ];
-      # File manager
-      # Mount, trash, and other functionalities
-      gvfs.enable = true;
-      # Thumbnail support for images
-      tumbler.enable = true;
     };
 
     displayManager.sddm = {
@@ -117,7 +122,11 @@
       wayland.enable = true;
     };
 
+    # File manager
+    # Mount, trash, and other functionalities
     gvfs.enable = true;
+    # Thumbnail support for images
+    tumbler.enable = true;
     udisks2.enable = true;
 
     # Enable automatic login for the user.
