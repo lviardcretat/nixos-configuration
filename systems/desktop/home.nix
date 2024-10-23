@@ -13,6 +13,7 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
+    ../../modules/nix-ide.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -39,6 +40,8 @@
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
       nerdfonts
+      nixd
+      nixfmt-rfc-style
       obsidian
       pavucontrol # Volume controller
       protonup-ng
