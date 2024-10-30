@@ -12,6 +12,7 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
+    ../../modules/vscode.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -38,7 +39,6 @@
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
       nerdfonts
-      netdata
       obsidian
       pavucontrol # Volume controller
       protonup-ng
@@ -50,6 +50,7 @@
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       ventoy # Bootable USB solution
+      vscode
       viewnior # Fast and simple image viewer
       wl-clipboard
       wf-recorder

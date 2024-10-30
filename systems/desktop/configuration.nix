@@ -65,6 +65,13 @@
           thunar-media-tags-plugin
       ];
     };
+    # Workaround to enable biomeJS VSCODE extension
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        nodePackages_latest.npm
+      ];
+    };
   };
 
   # Bootloader.
