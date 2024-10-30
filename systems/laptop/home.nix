@@ -3,6 +3,16 @@
   inputs,
   ...
 }: {
+  nixpkgs = {
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ../../modules/gui/hyprland/hyprland.nix
@@ -12,6 +22,7 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
+    ../../modules/vscode.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;

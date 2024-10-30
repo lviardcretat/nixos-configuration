@@ -18,9 +18,14 @@
     ags.url = "github:Aylur/ags";
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -37,7 +42,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.users.loic = import ./systems/desktop/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.useGlobalPkgs = true;            
+              # home-manager.useGlobalPkgs = true; # Cannot use overlays with this      
               home-manager.useUserPackages = true;
             }
           ];
@@ -53,7 +58,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.users.loic = import ./systems/laptop/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.useGlobalPkgs = true;            
+              # home-manager.useGlobalPkgs = true; # Cannot use overlays with this      
               home-manager.useUserPackages = true;
             }
           ];

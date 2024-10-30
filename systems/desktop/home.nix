@@ -3,6 +3,16 @@
   inputs,
   ...
 }: {
+  nixpkgs = {
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ../../modules/gui/hyprland/hyprland.nix
