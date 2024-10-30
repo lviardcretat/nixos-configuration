@@ -45,13 +45,6 @@
     adb.enable = true;
     # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 
     zsh.enable = true;
-    # Workaround to enable biomeJS VSCODE extension
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        nodePackages_latest.npm
-      ];
-    };
     # File manager
     xfconf.enable = true;
     thunar = {

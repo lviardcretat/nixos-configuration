@@ -1,5 +1,4 @@
 { 
-  config,
   pkgs,
   inputs,
   ...
@@ -47,7 +46,6 @@
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       viewnior # Fast and simple image viewer
-      vscode
       wl-clipboard
       wf-recorder
       xfce.thunar

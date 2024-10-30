@@ -1,5 +1,4 @@
 { 
-  config,
   pkgs,
   inputs,
   ...
@@ -13,7 +12,6 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
-    ../../modules/nix-ide.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -40,8 +38,7 @@
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
       nerdfonts
-      nixd
-      nixfmt-rfc-style
+      netdata
       obsidian
       pavucontrol # Volume controller
       protonup-ng
@@ -54,7 +51,6 @@
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       ventoy # Bootable USB solution
       viewnior # Fast and simple image viewer
-      vscode
       wl-clipboard
       wf-recorder
       xfce.thunar
