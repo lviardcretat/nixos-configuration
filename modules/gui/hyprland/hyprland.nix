@@ -1,7 +1,5 @@
 { 
   pkgs,
-  lib,
-  config,
   host,
   ... 
 }:
@@ -13,16 +11,16 @@ let
 
   bindWorkspaceSwitch =
     if (host == "desktop") then
-      ["$mainMod, code:ampersand , workspace, 1"
-      "$mainMod, code:grave, workspace, 2"
-      "$mainMod, code:quotedbl, workspace, 3"
-      "$mainMod, code:leftsinglequotemark, workspace, 4"
-      "$mainMod, code:parenleft, workspace, 5"
-      "$mainMod, \-, workspace, 6"
-      "$mainMod, \è, workspace, 7"
-      "$mainMod, code:underscore, workspace, 8"
-      "$mainMod, \ç, workspace, 9"
-      "$mainMod, code:parenright, workspace, 10"]
+      ["$mainMod, ampersand, workspace, 1"
+      "$mainMod, eacute, workspace, 2"
+      "$mainMod, quotedbl, workspace, 3"
+      "$mainMod, apostrophe, workspace, 4"
+      "$mainMod, parenleft, workspace, 5"
+      "$mainMod, minus, workspace, 6"
+      "$mainMod, egrave, workspace, 7"
+      "$mainMod, underscore, workspace, 8"
+      "$mainMod, ccedilla, workspace, 9"
+      "$mainMod, agrave, workspace, 10"]
     else
       ["$mainMod, F1, workspace, 1"
       "$mainMod, F2, workspace, 2"
