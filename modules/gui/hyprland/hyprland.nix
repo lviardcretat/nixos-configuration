@@ -1,14 +1,9 @@
-{ 
-  pkgs,
+{
   host,
   ... 
 }:
 
 let
-  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  '';
-
   bindWorkspaceSwitch =
     if (host == "desktop") then
       ["$mainMod, ampersand, workspace, 1"
@@ -72,10 +67,6 @@ in
         # Change transparency of focused and unfocused windows
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
@@ -188,7 +179,12 @@ in
       windowrule = [];
       windowrulev2 = [];
 
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once =
+      [
+        # Use to debug "[workspace 1 silent] kitty"
+        # I forgor why i need this
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      ];
     };
   };
 }

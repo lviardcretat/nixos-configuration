@@ -35,6 +35,7 @@
   ];
 
   programs = {
+    steam.enable = true;
     dconf.enable = true;
     direnv.enable = true;
     hyprland = { 
