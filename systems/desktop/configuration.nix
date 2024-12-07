@@ -1,10 +1,13 @@
 { 
   pkgs,
+  lib,
   inputs,
+  modulesPath,
   ...
 }: {
   imports = [ 
     ./hardware-configuration.nix
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
   nix = {
@@ -86,7 +89,7 @@
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true; # Enable networking
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   };
 
   # Set your time zone.
@@ -132,7 +135,7 @@
     udisks2.enable = true;
 
     # Enable automatic login for the user.
-    getty.autologinUser = "loic";
+    getty.autologinUser = lib.mkDefault "loic";
 
     # Enable sound
     pipewire = {

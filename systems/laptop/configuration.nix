@@ -1,17 +1,21 @@
 { 
   config,
   pkgs,
+  lib,
   inputs,
+  modulesPath,
   ...
 }: {
   imports = [ 
     ./hardware-configuration.nix
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   stylix = {
     enable = true;
@@ -74,7 +78,7 @@
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true; # Enable networking
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    wireless.enable = false;  # Enables wireless support via wpa_supplicant.
   };
 
   # Set your time zone.
@@ -112,7 +116,7 @@
     };
 
     # Enable automatic login for the user.
-    getty.autologinUser = "loic";
+    getty.autologinUser = lib.mkDefault "loic";
 
     # File manager
     # Mount, trash, and other functionalities
