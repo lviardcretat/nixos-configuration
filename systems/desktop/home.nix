@@ -59,7 +59,10 @@
       swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
-      ventoy # Bootable USB solution
+      (ventoy.override { # Bootable USB solution
+        defaultGuiType = "gtk3";
+        withGtk3 = true;
+      }) 
       vscode
       viewnior # Fast and simple image viewer
       wl-clipboard
