@@ -2,12 +2,10 @@
   pkgs,
   lib,
   inputs,
-  modulesPath,
   ...
 }: {
   imports = [ 
     ./hardware-configuration.nix
-    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
   nix = {
@@ -197,7 +195,7 @@
     isNormalUser = true;
     description = "loic";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = [];
     shell = pkgs.zsh;
   };
 
