@@ -46,7 +46,6 @@
       lm_sensors # Controlling fan speed
       mpv # Media player
       musescore
-      nerdfonts
       obsidian
       pavucontrol # Volume controller
       protonvpn-gui

@@ -48,7 +48,6 @@
       lutris      
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
-      nerdfonts
       obsidian
       pavucontrol # Volume controller
       protonup-ng
