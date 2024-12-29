@@ -167,6 +167,7 @@
         };
       };
     };
+    ollama.enable = true;
   };
 
   xdg.portal = {
