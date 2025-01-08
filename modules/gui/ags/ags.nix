@@ -11,12 +11,21 @@
     configDir = ./config;
     # additional packages to add to gjs's runtime
     extraPackages = with pkgs; [
-      bun
+      inputs.ags.packages.${pkgs.system}.io
+      inputs.ags.packages.${pkgs.system}.bluetooth
+      inputs.ags.packages.${pkgs.system}.mpris
+      inputs.ags.packages.${pkgs.system}.network
+      inputs.ags.packages.${pkgs.system}.wireplumber
+      fzf
     ];
   };
 
   home.packages = with pkgs; [
-    bun
-    brightnessctl
+    inputs.ags.packages.${pkgs.system}.io
+    inputs.ags.packages.${pkgs.system}.bluetooth
+    inputs.ags.packages.${pkgs.system}.mpris
+    inputs.ags.packages.${pkgs.system}.network
+    inputs.ags.packages.${pkgs.system}.wireplumber
+    fzf
   ];
 }

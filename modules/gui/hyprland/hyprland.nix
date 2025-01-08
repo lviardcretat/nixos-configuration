@@ -182,7 +182,7 @@ in
       exec-once =
       [
         # Use to debug "[workspace 1 silent] kitty"
-        # I forgor why i need this
+        # I forgot why i need this
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
     };
