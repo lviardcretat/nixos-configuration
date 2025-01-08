@@ -63,6 +63,11 @@
       zsh
       # Zed-editor Wait until it's really complete
     ];
+
+    sessionVariables = {
+      # Needed to run zen-browser
+      MOZ_ENABLE_WAYLAND = "0";
+    };
   };
 
   programs = {

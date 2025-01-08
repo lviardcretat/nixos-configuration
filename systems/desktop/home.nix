@@ -73,6 +73,8 @@
 
     sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+      # Needed to run zen-browser
+      MOZ_ENABLE_WAYLAND = "0";
     };
   };
 
