@@ -34,6 +34,7 @@
 
     packages = with pkgs; [
       android-tools
+      dbgate
       dunst # Notification daemon
       eww # Standalone widget system
       fzf
