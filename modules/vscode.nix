@@ -28,6 +28,7 @@
       eamodio.gitlens
       biomejs.biome
       joshbolduc.commitlint
+      lokalise.i18n-ally
 
       # Languages and frameworks
       ecmel.vscode-html-css
@@ -72,6 +73,7 @@
 
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
+
       "codeium.enableConfig" = {
         "*" = true;
         "nix" = true;
@@ -81,9 +83,6 @@
       "explorer.confirmDelete" = false;
       "javascript.updateImportsOnFileMove.enabled" = "always";
       "git.confirmSync" = false;
-      "editor.formatOnSave" = true;
-      "editor.defaultFormatter" = "biomejs.biome";
-      "editor.gotoLocation.multipleDefinitions" = "goto";
 
       "nuxtr.vueFiles.template.defaultLanguage" = "html";
       "nuxtr.vueFiles.firstTag" = "template";
@@ -99,9 +98,22 @@
         "*.css" = "tailwindcss";
         "*.scss" = "tailwindcss";
       };
+
       "editor.quickSuggestions" = {
         "strings" = "on";
       };
+      "editor.formatOnSave" = true;
+      "editor.defaultFormatter" = "biomejs.biome";
+      "editor.gotoLocation.multipleDefinitions" = "goto";
+
+      "i18n-ally.localesPaths" = ["i18n/locales"];
+      "i18n-ally.pathMatcher" = "{locale}.json";
+      "i18n-ally.keystyle" = "nested";
+      "i18n-ally.enabledParsers" = ["json"];
+      "i18n-ally.autoDetection" = false;
+      "i18n-ally.dirStructure" = "dir";
+      "i18n-ally.sourceLanguage" = "fr";
+      "i18n-ally.displayLanguage" = "fr";
     };
   };
 }
