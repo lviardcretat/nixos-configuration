@@ -40,6 +40,7 @@
       fzf
       gamemode
       git
+      godot_4
       grim # Needed for screenshots
       heroic
       killall
