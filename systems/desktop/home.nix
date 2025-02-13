@@ -24,7 +24,7 @@
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
     ../../modules/vscode.nix
-    ../../modules/zed.nix
+    #../../modules/zed.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;

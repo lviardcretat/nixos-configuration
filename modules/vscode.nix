@@ -49,6 +49,7 @@
       pkief.material-icon-theme
 
       # Other
+      continue.continue
       antfu.goto-alias
       jacano.vscode-pnpm
       redhat.vscode-yaml
@@ -74,12 +75,6 @@
 
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
-
-      "codeium.enableConfig" = {
-        "*" = true;
-        "nix" = true;
-        "edge" = true;
-      };
       "typescript.updateImportsOnFileMove.enabled" = "always";
       "explorer.confirmDelete" = false;
       "javascript.updateImportsOnFileMove.enabled" = "always";

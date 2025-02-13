@@ -1,15 +1,19 @@
-{ 
+{
   pkgs,
   lib,
   inputs,
   ...
-}: {
-  imports = [ 
+}:
+{
+  imports = [
     ./hardware-configuration.nix
   ];
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     settings.download-buffer-size = "1024M";
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
@@ -30,7 +34,7 @@
       inputs.zen-browser.packages."${pkgs.system}".default
     ];
     sessionVariables = {
-      NIXOS_OZONE_WL="1";
+      NIXOS_OZONE_WL = "1";
     };
   };
 
@@ -41,7 +45,7 @@
   programs = {
     dconf.enable = true;
     direnv.enable = true;
-    hyprland = { 
+    hyprland = {
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
@@ -56,16 +60,16 @@
     };
     # Webcam/android cam
     adb.enable = true;
-    # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files. 
+    # Always enable the shell system-wide, even if it's already enabled in your Home Manager configuration, otherwise it won't source the necessary files.
     zsh.enable = true;
     # File manager
     xfconf.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
-          thunar-archive-plugin
-          thunar-volman
-          thunar-media-tags-plugin
+        thunar-archive-plugin
+        thunar-volman
+        thunar-media-tags-plugin
       ];
     };
     # Workaround to enable biomeJS VSCODE extension
@@ -89,7 +93,7 @@
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true; # Enable networking
-    wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+    wireless.enable = false; # Enables wireless support via wpa_supplicant.
   };
 
   # Set your time zone.
@@ -191,8 +195,11 @@
     wlr.enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = ["gtk"];
-      hyprland.default = ["gtk" "hyprland"];
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
     };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
@@ -203,10 +210,10 @@
   hardware.enableAllFirmware = true;
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;  # Needed for 32-bit applications (like Steam games)
+    enable32Bit = true; # Needed for 32-bit applications (like Steam games)
     extraPackages = with pkgs; [
-      amdvlk  # Official AMD Vulkan driver
-      mesa    # Open-source Mesa driver
+      amdvlk # Official AMD Vulkan driver
+      mesa # Open-source Mesa driver
     ];
   };
 
@@ -220,8 +227,11 @@
   users.users.loic = {
     isNormalUser = true;
     description = "loic";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = [ ];
     shell = pkgs.zsh;
   };
 
