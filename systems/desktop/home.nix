@@ -24,6 +24,7 @@
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
     ../../modules/vscode.nix
+    ../../modules/tabby.nix
     #../../modules/zed.nix
   ];
 
@@ -61,7 +62,6 @@
       slurp # Needed for screenshots
       spotify
       swappy
-      tabby
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       (ventoy.override {
