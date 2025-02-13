@@ -3,7 +3,6 @@
   ... 
 }: {
   home.packages = with pkgs; [
-    vscode
     nixd
     nixfmt-rfc-style
   ];
@@ -49,7 +48,7 @@
       pkief.material-icon-theme
 
       # Other
-      continue.continue
+      tabbyml.vscode-tabby
       antfu.goto-alias
       jacano.vscode-pnpm
       redhat.vscode-yaml

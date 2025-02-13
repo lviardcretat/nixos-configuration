@@ -61,6 +61,7 @@
       slurp # Needed for screenshots
       spotify
       swappy
+      tabby
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
       (ventoy.override {
@@ -68,7 +69,6 @@
         defaultGuiType = "gtk3";
         withGtk3 = true;
       })
-      vscode
       viewnior # Fast and simple image viewer
       wl-clipboard
       wf-recorder
