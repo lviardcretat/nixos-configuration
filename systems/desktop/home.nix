@@ -1,8 +1,9 @@
-{ 
+{
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   nixpkgs = {
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
@@ -23,6 +24,7 @@
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
     ../../modules/vscode.nix
+    ../../modules/zed.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
@@ -39,6 +41,7 @@
       eww # Standalone widget system
       fzf
       gamemode
+      gimp
       git
       godot_4
       grim # Needed for screenshots
@@ -47,7 +50,7 @@
       libjpeg
       libreoffice
       lm_sensors # Controlling fan speed
-      lutris      
+      lutris
       mangohud # Vulkan and OpenGL overlay for monitoring system performance
       mpv # Media player
       obsidian
@@ -60,17 +63,17 @@
       swappy
       unzip
       v4l-utils # Linux utilities and libraries to handle media devices (capture devices, remote controllers...)
-      (ventoy.override { # Bootable USB solution
+      (ventoy.override {
+        # Bootable USB solution
         defaultGuiType = "gtk3";
         withGtk3 = true;
-      }) 
+      })
       vscode
       viewnior # Fast and simple image viewer
       wl-clipboard
       wf-recorder
       xfce.thunar
       zoxide
-      # Zed-editor Wait until it's really complete
     ];
 
     sessionVariables = {

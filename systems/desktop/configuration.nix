@@ -10,6 +10,7 @@
 
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.download-buffer-size = "1024M";
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
 
@@ -168,8 +169,6 @@
       };
     };
 
-    ollama.enable = true;
-
     postgresql = {
       enable = true;
       ensureDatabases = [ "recepto" ];
@@ -201,7 +200,15 @@
     ];
   };
 
-  hardware.graphics.enable = true;
+  hardware.enableAllFirmware = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;  # Needed for 32-bit applications (like Steam games)
+    extraPackages = with pkgs; [
+      amdvlk  # Official AMD Vulkan driver
+      mesa    # Open-source Mesa driver
+    ];
+  };
 
   # Enable sound
   security.rtkit.enable = true;

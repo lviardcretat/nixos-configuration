@@ -181,8 +181,7 @@ in
 
       exec-once =
       [
-        # Use to debug "[workspace 1 silent] kitty"
-        # I forgot why i need this
+        # This will make sure that xdg-desktop-portal-hyprland can get the required variables on startup.
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
     };

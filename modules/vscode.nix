@@ -41,8 +41,9 @@
       nicholashsiang.vscode-pinia-snippets
 
       # BDD
+      imgildev.vscode-drizzle-snippets
+      rphlmr.vscode-drizzle-orm
       yy0931.vscode-sqlite3-editor
-      prisma.prisma
 
       # UI
       pkief.material-icon-theme
