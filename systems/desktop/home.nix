@@ -23,9 +23,9 @@
     ../../modules/cli/direnv.nix
     ../../modules/vesktop.nix
     ../../modules/gui/ags/ags.nix
-    ../../modules/vscode.nix
-    ../../modules/tabby.nix
-    #../../modules/zed.nix
+    ../../modules/ide/vscode.nix
+    #../../modules/ide/zed.nix
+    ../../modules/ide/webstorm.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;

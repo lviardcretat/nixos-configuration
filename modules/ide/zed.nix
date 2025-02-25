@@ -24,6 +24,22 @@
     ];
 
     userSettings = {
+      languages.Nix = {
+        tab_size = 2;
+        language_servers = [
+          "nixd"
+          "!nil"
+        ];
+        formatter = {
+          external = {
+            command = "nixfmt";
+            arguments = [
+              "--quiet"
+              "--"
+            ];
+          };
+        };
+      };
       icon_theme = "Material Icon Theme";
       telemetry = {
         metrics = false;

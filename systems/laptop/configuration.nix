@@ -36,7 +36,6 @@
   ];
 
   programs = {
-    steam.enable = true;
     dconf.enable = true;
     direnv.enable = true;
     hyprland = { 
@@ -68,9 +67,12 @@
   };
 
   # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   networking = {
@@ -99,6 +101,8 @@
   };
 
   services = {
+    fstrim.enable = true;
+    printing.enable = true;
     xserver = {
       enable = true;
       # Configure keymap in X11
@@ -189,4 +193,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
+  system.autoUpgrade.enable = true;
 }
